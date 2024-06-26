@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      p {
+        display: inline;
+      }
+
+      .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 120px;
+        height: 120px;
+        -webkit-animation: spin 2s linear infinite;
+        /* Safari */
+        animation: spin 2s linear infinite;
+      }
+
+      /* Safari */
+      @-webkit-keyframes spin {
+        0% {
+          -webkit-transform: rotate(0deg);
+        }
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .table-container {
+        overflow-x: auto;
+        width: 100%;
+      }
+
+      .new-container {
+        margin-top: 10px;
+        padding: 16px 24px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: -apple-system, BlinkMacSystemFont,
+          Segoe UI, Helvetica, Arial, sans-serif,
+          Apple Color Emoji, Segoe UI Emoji, sans-serif;
+        font-size: 14px;
+        /* box-sizing: border-box; */
+      }
+
+      .bstack-table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ccc;
+      }
+
+      .bstack-header {
+        height: 25px;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .bstack-data {
+        height: 20px;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-bottom: 0;
+        border-top: 0;
+      }
+
+      .session-name {
+        text-align: left;
+      }
+
+      .bstack-row:nth-child(even) {
+        background-color: #f5f5f5;
+      }
+
+      .no-report-para {
+        line-height: 1.5;
+        color: #333;
+      }
+
+      .strong-font-custom {
+        font-weight: 700;
+      }
+
+      .bullet-points {
+        list-style: disc;
+      }
+
+      .bullet-item {
+        color: #333;
+        margin: 8px 0;
+        line-height: 1.5;
+        margin-left: 24px;
+      }
+
+      .titlecase-data {
+        text-transform: capitalize;
+      }
+
+      .error-span {
+        font-family: monospace;
+        color: #333;
+        padding: 2px 8px;
+        border-radius: 4px;
+        border: 1px solid #aaa;
+        font-weight: 400;
+        font-size: 12px;
+        color: #dd4b4b;
+        border-color: #dd4b4b;
+      }
+    </style>
+  </head>
+
+  <body style="overflow: auto">
+    <div
+      class="table-container"
+    >
+      <h2 style="padding-top: 10px; padding-bottom: 10px">
+        BrowserStack Test Results
+      </h2>
+      <div id="resultsTab">
+        <div
+          id="resultsNum"
+          style="
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 15px;
+          "
+        >
+        <p>
+          Displaying&nbsp;
+          <span id="totalResultsCount">3</span>
+          &nbsp;sessions.
+        </p>
+        </div>
+        <div style="border-style: solid;border-width: thin;">
+          <div style="align-self: center;" align="left">
+              <h3 style="text-align: center;">
+                  Build Name: <a href="https://automate.browserstack.com/dashboard/v2/builds/e20bd8b44fa13d94c30231ff892aee5d1b70ab20" target="_blank">jenkins-Playwright-5</a>
+               </h3>
+          </div>
+        </div>
+        <table border="1" class="bstack-table">
+          <tr class="bstack-row">
+            <th class="bstack-header">Name</th>
+            <th class="bstack-header">Status</th>
+            <th class="bstack-header">REST API</th>
+            <th class="bstack-header">Browser/Device</th>
+            <th class="bstack-header">OS</th>
+            <th class="bstack-header">Duration</th>
+            <th class="bstack-header">Created At</th>
+          </tr>
+          <tr class="bstack-row">
+  <td class="bstack-data session-name"><a href="https://automate.browserstack.com/builds/e20bd8b44fa13d94c30231ff892aee5d1b70ab20/sessions/4f28493de5168dfc3d47f90d85f8af57fa7294cd?auth_token=550ebb1eaa2eb8ea15cb13f5777d6c6866d52d3c1f84456d37e3cebe4be43091" target="_blank">test.spec.js - BStackDemo test checkout flow</a></td>
+    <td class="bstack-data" style="color:green;"><font color="green">Completed</font></td>
+    <td class="bstack-data" style="color:green;"><font color="green">Passed</font></td>
+    <td align="center" class="bstack-data">Chrome 126.0</td>
+    <td align="center" class="bstack-data">Windows 11</td>
+    <td align="center" class="bstack-data">16</td>
+    <td align="center" class="bstack-data">6/25/2024, 8:59:59 PM</td>
+  </tr><tr class="bstack-row">
+  <td class="bstack-data session-name"><a href="https://automate.browserstack.com/builds/e20bd8b44fa13d94c30231ff892aee5d1b70ab20/sessions/b2e5015c94db6749d5a924950687292d72a7e64a?auth_token=0b2bbd18040634874def75ef7b10afc8c496b2d06f69255b0e77dafc77580ee0" target="_blank">test.spec.js - BStackDemo test checkout flow</a></td>
+    <td class="bstack-data" style="color:green;"><font color="green">Completed</font></td>
+    <td class="bstack-data" style="color:green;"><font color="green">Passed</font></td>
+    <td align="center" class="bstack-data">Playwright-firefox 125.0</td>
+    <td align="center" class="bstack-data">Windows 11</td>
+    <td align="center" class="bstack-data">29</td>
+    <td align="center" class="bstack-data">6/25/2024, 8:59:45 PM</td>
+  </tr><tr class="bstack-row">
+  <td class="bstack-data session-name"><a href="https://automate.browserstack.com/builds/e20bd8b44fa13d94c30231ff892aee5d1b70ab20/sessions/c550b9e888975e2b3b33b9efd386da7ed615831b?auth_token=e9258dbeb9b3e4fc361a3e81f4674e7d0900faea177d37f19f4bc7f747ee2f57" target="_blank">test.spec.js - BStackDemo test checkout flow</a></td>
+    <td class="bstack-data" style="color:green;"><font color="green">Completed</font></td>
+    <td class="bstack-data" style="color:green;"><font color="green">Passed</font></td>
+    <td align="center" class="bstack-data">Playwright-webkit 17.4</td>
+    <td align="center" class="bstack-data">OS X Ventura</td>
+    <td align="center" class="bstack-data">13</td>
+    <td align="center" class="bstack-data">6/25/2024, 8:59:45 PM</td>
+  </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

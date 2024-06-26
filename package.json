@@ -1,0 +1,18 @@
+{
+  "name": "playwright-self",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "bs" : "npx browserstack-node-sdk playwright test tests/test.spec.js",
+    "postinstall": "npm update browserstack-node-sdk"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@types/node": "^20.14.8",
+    "browserstack-node-sdk": "^1.34.1"
+  }
+}
